@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Asadero Taquería | Sabor Que Se Queda - Teotihuacán</title>
+    <!-- Meta tags SEO -->
+    <meta name="description" content="Los mejores tacos de suadero, pastor, arrachera y especialidades a la parrilla en San Juan Teotihuacán. Servicio a domicilio y salsas caseras.">
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-dark: #0f0a07;
+            --bg-card: #18100b;
+            --bg-card-hover: #221710;
+            --primary-fire: #ff4500;
+            --secondary-orange: #ff7b00;
+            --accent-gold: #ffb703;
+            --text-light: #f8f1e7;
+            --text-muted: #bdae9e;
+            --border-color: #382417;
+            --whatsapp-green: #25d366;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Typography Helper Classes */
+        .font-bebas {
+            font-family: 'Bebas Neue', cursive;
+            letter-spacing: 1px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Bebas Neue', cursive;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER & NAVBAR */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(15, 10, 7, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 2px solid var(--primary-fire);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 75px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+            color: var(--primary-fire);
+            animation: flameGlow 2s infinite alternate;
+        }
+
+        @keyframes flameGlow {
+            0% { transform: scale(1); filter: drop-shadow(0 0 2px var(--primary-fire)); }
+            100% { transform: scale(1.1); filter: drop-shadow(0 0 10px var(--secondary-orange)); }
+        }
+
+        .logo-text {
+            font-size: 2rem;
+            color: var(--text-light);
+            line-height: 1;
+        }
+
+        .logo-text span {
+            color: var(--primary-fire);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .btn-nav {
+            background: linear-gradient(135deg, var(--primary-fire), var(--secondary-orange));
+            color: #fff !important;
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(255, 69, 0, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            background: linear-gradient(rgba(15, 10, 7, 0.75), rgba(15, 10, 7, 0.95)), 
+                        url('https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 69, 0, 0.2);
+            border: 1px solid var(--primary-fire);
+            color: var(--accent-gold);
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            line-height: 1;
+            margin-bottom: 15px;
+            color: var(--text-light);
+            text-shadow: 0 4px 15px rgba(0,0,0,0.8);
+        }
+
+        .hero h1 span {
+            color: var(--primary-fire);
+            display: block;
+        }
+
+        .hero-tagline {
+            font-size: 1.8rem;
+            color: var(--accent-gold);
+            font-family: 'Bebas Neue', cursive;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-fire), var(--secondary-orange));
+            color: #fff;
+            box-shadow: 0 6px 20px rgba(255, 69, 0, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 69, 0, 0.6);
+        }
+
+        .btn-whatsapp {
+            background-color: var(--whatsapp-green);
+            color: #fff;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
+            background-color: #20bd5a;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--accent-gold);
+            color: var(--bg-dark);
+        }
+
+        /* SECTION COMMON */
+        section {
+            padding: 90px 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-header h2 {
+            font-size: 3.2rem;
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .divider-fire {
+            width: 80px;
+            height: 4px;
+            background: var(--primary-fire);
+            margin: 15px auto;
+            border-radius: 2px;
+            position: relative;
+        }
+
+        /* MENU SECTION */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .menu-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--primary-fire);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .menu-card:hover {
+            background-color: var(--bg-card-hover);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            border-color: #523420;
+        }
+
+        .menu-card:hover::before {
+            opacity: 1;
+        }
+
+        .menu-card-info {
+            padding-right: 15px;
+        }
+
+        .menu-card-title {
+            font-size: 1.6rem;
+            color: var(--text-light);
+            margin-bottom: 6px;
+        }
+
+        .menu-card-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .menu-card-price {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2rem;
+            color: var(--accent-gold);
+            white-space: nowrap;
+        }
+
+        .menu-banner {
+            background: linear-gradient(135deg, #2a160a, #1a0d06);
+            border: 1px dashed var(--primary-fire);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            margin-top: 35px;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* EXTRAS SECTION (Papas, Bebidas & Salsas) */
+        .extras-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .extra-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .extra-icon {
+            font-size: 3rem;
+            color: var(--primary-fire);
+            margin-bottom: 15px;
+        }
+
+        .extra-title {
+            font-size: 2.2rem;
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+        }
+
+        .extra-price {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2.5rem;
+            color: var(--primary-fire);
+            margin-bottom: 10px;
+        }
+
+        .extra-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .sauce-badges {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .sauce-badge {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .sauce-red {
+            background-color: #8b0000;
+            color: #ffcccc;
+            border: 1px solid #ff4d4d;
+        }
+
+        .sauce-green {
+            background-color: #1e561e;
+            color: #ccffcc;
+            border: 1px solid #4dff4d;
+        }
+
+        /* LOCATION & HOURS SECTION */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .info-box {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 35px;
+        }
+
+        .info-box h3 {
+            font-size: 2rem;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .info-box h3 i {
+            color: var(--primary-fire);
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            margin-bottom: 15px;
+            display: flex;
+            gap: 12px;
+            color: var(--text-light);
+        }
+
+        .info-list li i {
+            color: var(--secondary-orange);
+            margin-top: 4px;
+        }
+
+        /* PAYMENT SECTION */
+        .payment-box {
+            background: linear-gradient(135deg, #1c1109, #28170b);
+            border: 2px solid var(--secondary-orange);
+            border-radius: 16px;
+            padding: 35px;
+            margin-top: 40px;
+        }
+
+        .payment-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+
+        .payment-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .clabe-code {
+            background-color: #0b0704;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 1.2rem;
+            color: var(--accent-gold);
+            letter-spacing: 1px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-copy {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .btn-copy:hover {
+            color: var(--accent-gold);
+        }
+
+        /* FLOATING WHATSAPP BUTTON */
+        .float-whatsapp {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: var(--whatsapp-green);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        .float-whatsapp:hover {
+            transform: scale(1.1);
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #080503;
+            border-top: 1px solid var(--border-color);
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 2.2rem;
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+        }
+
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-copy {
+            color: #66574a;
+            font-size: 0.8rem;
+            border-top: 1px solid #1c120a;
+            padding-top: 20px;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Can be toggled with JS if needed */
+            }
+
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+
+            .hero-tagline {
+                font-size: 1.4rem;
+            }
+
+            .section-header h2 {
+                font-size: 2.5rem;
+            }
+
+            .payment-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo-area">
+                <i class="fa-solid fa-fire-flame-curved logo-icon"></i>
+                <div class="logo-text font-bebas">El Asadero <span>Taquería</span></div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#menu">Menú</a></li>
+                <li><a href="#especiales">Especiales</a></li>
+                <li><a href="#ubicacion">Ubicación</a></li>
+                <li><a href="#pagos">Pagos</a></li>
+                <li>
+                    <a href="https://wa.me/525580311197?text=Hola,%20me%20gustaría%20hacer%20un%20pedido%20en%20El%20Asadero" target="_blank" class="btn-nav">
+                        <i class="fa-brands fa-whatsapp"></i> Pedir Ahora
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-badge"><i class="fa-solid fa-fire"></i> Taquería Tradicional</span>
+                <h1 class="font-bebas">EL ASADERO <span>TAQUERÍA</span></h1>
+                <p class="hero-tagline">"SABOR QUE SE QUEDA | TACOS QUE HACEN LA DIFERENCIA"</p>
+                <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 30px;">
+                    Siente la verdadera sazón a la parrilla y a la plancha en San Juan Teotihuacán. Tacos jugosos preparados al momento con ingredientes de calidad.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#menu" class="btn btn-primary"><i class="fa-solid fa-utensils"></i> Ver Menú</a>
+                    <a href="https://wa.me/525580311197?text=Hola,%20quisiera%20pedir%20a%20domicilio" target="_blank" class="btn btn-whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i> Pedir a Domicilio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TACOS MENU SECTION -->
+    <section id="menu">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nuestros Tacos</h2>
+                <div class="divider-fire"></div>
+                <p>Todos nuestros tacos incluyen cilantro, cebolla picada y la mejor salsa de la casa.</p>
+            </div>
+
+            <div class="menu-grid">
+                <!-- Suadero -->
+                <div class="menu-card">
+                    <div class="menu-card-info">
+                        <div class="menu-card-title font-bebas">Suadero</div>
+                        <div class="menu-card-desc">Suave y jugoso suadero tradicional con cilantro y cebolla.</div>
+                    </div>
+                    <div class="menu-card-price">$32</div>
+                </div>
+
+                <!-- Pastor -->
+                <div class="menu-card">
+                    <div class="menu-card-info">
+                        <div class="menu-card-title font-bebas">Pastor</div>
+                        <div class="menu-card-desc">Carne de cerdo marinada al pastor con piña, cilantro y cebolla.</div>
+                    </div>
+                    <div class="menu-card-price">$32</div>
+                </div>
+
+                <!-- Longaniza -->
+                <div class="menu-card">
+                    <div class="menu-card-info">
+                        <div class="menu-card-title font-bebas">Longaniza</div>
+                        <div class="menu-card-desc">Longaniza doradita con sabor tradicional, cilantro y cebolla.</div>
+                    </div>
+                    <div class="menu-card-price">$32</div>
+                </div>
+
+                <!-- Tripa -->
+                <div class="menu-card">
+                    <div class="menu-card-info">
+                        <div class="menu-card-title font-bebas">Tripa</div>
+                        <div class="menu-card-desc">Tripa bien doradita y crujiente con cilantro y cebolla.</div>
+                    </div>
+                    <div class="menu-card-price">$35</div>
+                </div>
+
+                <!-- Arrachera -->
+                <div class="menu-card">
+                    <div class="menu-card-info">
+                        <div class="menu-card-title font-bebas">Arrachera <i class="fa-solid fa-star" style="color: var(--accent-gold); font-size: 0.8rem;"></i></div>
+                        <div class="menu-card-desc">Arrachera corte jugoso a la parrilla con cilantro y cebolla.</div>
+                    </div>
+                    <div class="menu-card-price">$40</div>
+                </div>
+
+                <!-- Chistorra -->
+                <div class="menu-card">
+                    <div class="menu-card-info">
+                        <div class="menu-card-title font-bebas">Chistorra</div>
+                        <div class="menu-card-desc">Chistorra doradita a la plancha con cilantro y cebolla.</div>
+                    </div>
+                    <div class="menu-card-price">$35</div>
+                </div>
+
+                <!-- Bistec -->
+                <div class="menu-card">
+                    <div class="menu-card-info">
+                        <div class="menu-card-title font-bebas">Bistec</div>
+                        <div class="menu-card-desc">Bistec de res a la plancha sazonado con cilantro y cebolla.</div>
+                    </div>
+                    <div class="menu-card-price">$35</div>
+                </div>
+
+                <!-- Costilla -->
+                <div class="menu-card">
+                    <div class="menu-card-info">
+                        <div class="menu-card-title font-bebas">Costilla</div>
+                        <div class="menu-card-desc">Costilla de res, cocida suave y jugosa con cilantro y cebolla.</div>
+                    </div>
+                    <div class="menu-card-price">$35</div>
+                </div>
+
+                <!-- Chorizo Argentino -->
+                <div class="menu-card">
+                    <div class="menu-card-info">
+                        <div class="menu-card-title font-bebas">Chorizo Argentino</div>
+                        <div class="menu-card-desc">Chorizo argentino doradito al carbón/plancha con cilantro y cebolla.</div>
+                    </div>
+                    <div class="menu-card-price">$35</div>
+                </div>
+
+                <!-- Longaniza con Suadero -->
+                <div class="menu-card">
+                    <div class="menu-card-info">
+                        <div class="menu-card-title font-bebas">Longaniza con Suadero</div>
+                        <div class="menu-card-desc">Combinación perfecta de longaniza y suadero con cilantro y cebolla.</div>
+                    </div>
+                    <div class="menu-card-price">$35</div>
+                </div>
+            </div>
+
+            <div class="menu-banner">
+                <i class="fa-solid fa-pepper-hot" style="color: var(--primary-fire); margin-right: 8px;"></i>
+                ¡PRUÉBALOS CON NUESTRAS SALSAS CASERAS! "El buen taco siempre lleva salsa".
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPLEMENTOS Y BEBIDAS -->
+    <section id="especiales" style="background-color: #0b0704;">
+        <div class="container">
+            <div class="section-header">
+                <h2>El Complemento Perfecto</h2>
+                <div class="divider-fire"></div>
+                <p>Acompaña tus tacos con nuestras entradas especializadas y bebidas heladas.</p>
+            </div>
+
+            <div class="extras-grid">
+                <!-- Papas Fritas -->
+                <div class="extra-card">
+                    <i class="fa-solid fa-box-tissue extra-icon"></i>
+                    <h3 class="extra-title">Papas Fritas</h3>
+                    <div class="extra-price">$50</div>
+                    <p class="extra-desc">Papas fritas a la francesa toppeadas con catsup, queso amarillo y crema.</p>
+                </div>
+
+                <!-- Bebidas -->
+                <div class="extra-card">
+                    <i class="fa-solid fa-bottle-droplet extra-icon"></i>
+                    <h3 class="extra-title">Bebidas Frías</h3>
+                    <div class="extra-price">Desde $28</div>
+                    <p class="extra-desc">
+                        • Refresco Coca-Cola ($28)<br>
+                        • Jugos Boing (Mango, Guayaba)<br>
+                        • Señorial Sangría<br>
+                        <em>¡Bien frías para tu taco!</em>
+                    </p>
+                </div>
+
+                <!-- Salsas Caseras -->
+                <div class="extra-card">
+                    <i class="fa-solid fa-fire-burner extra-icon"></i>
+                    <h3 class="extra-title">Salsas Caseras</h3>
+                    <div class="extra-price">Incluidas</div>
+                    <p class="extra-desc">Nuestras emblemáticas recetas de la casa hechas diariamente con ingredientes frescos.</p>
+                    <div class="sauce-badges">
+                        <span class="sauce-badge sauce-red">Salsa Roja</span>
+                        <span class="sauce-badge sauce-green">Salsa Verde</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UBICACIÓN, HORARIOS Y PAGOS -->
+    <section id="ubicacion">
+        <div class="container">
+            <div class="section-header">
+                <h2>Ubicación y Servicio</h2>
+                <div class="divider-fire"></div>
+                <p>Visítanos o pide directamente a tu domicilio.</p>
+            </div>
+
+            <div class="info-grid">
+                <!-- Dirección -->
+                <div class="info-box">
+                    <h3 class="font-bebas"><i class="fa-solid fa-location-dot"></i> Dónde Estamos</h3>
+                    <ul class="info-list">
+                        <li>
+                            <i class="fa-solid fa-map-pin"></i>
+                            <div>
+                                <strong>Dirección:</strong><br>
+                                Emilio Carranza esq. Mariano Arista<br>
+                                (Frente a Mercado el Rocío)
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-city"></i>
+                            <div>San Juan Teotihuacán, Estado de México.</div>
+                        </li>
+                    </ul>
+                    <a href="https://maps.google.com/?q=Emilio+Carranza+esq+Mariano+Arista+Teotihuacan" target="_blank" class="btn btn-outline" style="width: 100%; margin-top: 15px;">
+                        <i class="fa-solid fa-map-location-dot"></i> Ver en Google Maps
+                    </a>
+                </div>
+
+                <!-- Horarios -->
+                <div class="info-box">
+                    <h3 class="font-bebas"><i class="fa-solid fa-clock"></i> Horarios de Servicio</h3>
+                    <ul class="info-list">
+                        <li>
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <div>
+                                <strong>Lunes a Viernes:</strong><br>
+                                4:00 PM – 11:00 PM
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-calendar-week"></i>
+                            <div>
+                                <strong>Sábado y Domingo:</strong><br>
+                                10:30 AM – 11:00 PM
+                            </div>
+                        </li>
+                    </ul>
+                    <div style="background-color: rgba(37, 211, 102, 0.1); border: 1px solid var(--whatsapp-green); padding: 12px; border-radius: 8px; text-align: center; color: var(--whatsapp-green); margin-top: 15px; font-weight: 600;">
+                        <i class="fa-solid fa-motorcycle"></i> ¡Servicio a Domicilio Disponible!
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAYMENT INFO BOX -->
+            <div class="payment-box" id="pagos">
+                <div class="payment-header">
+                    <h3 class="font-bebas" style="font-size: 2.2rem; color: var(--accent-gold); margin: 0;">
+                        <i class="fa-solid fa-credit-card" style="color: var(--primary-fire);"></i> Pago por Transferencia
+                    </h3>
+                    <span style="color: var(--text-muted); font-size: 0.9rem;">Envíanos tu comprobante vía WhatsApp</span>
+                </div>
+
+                <div class="payment-details">
+                    <div>
+                        <span style="color: var(--text-muted); font-size: 0.85rem; display: block;">BANCO:</span>
+                        <strong style="font-size: 1.2rem; color: var(--text-light);">Banamex</strong>
+                    </div>
+                    <div>
+                        <span style="color: var(--text-muted); font-size: 0.85rem; display: block;">TITULAR:</span>
+                        <strong style="font-size: 1.1rem; color: var(--text-light);">Pablo David González Martínez</strong>
+                    </div>
+                    <div style="grid-column: span 1 / -1;">
+                        <span style="color: var(--text-muted); font-size: 0.85rem; display: block; margin-bottom: 5px;">CLABE INTERBANCARIA:</span>
+                        <div class="clabe-code">
+                            <span id="clabe-text">002180702141139357</span>
+                            <button class="btn-copy" onclick="copyCLABE()" title="Copiar CLABE">
+                                <i class="fa-regular fa-copy" id="copy-icon"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/525580311197?text=Hola,%20quisiera%20hacer%20un%20pedido%20en%20El%20Asadero" class="float-whatsapp" target="_blank" title="Hacer pedido por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo font-bebas">EL ASADERO TAQUERÍA</div>
+            <p class="footer-text">Sabor que se queda • Tacos que hacen la diferencia</p>
+            <p class="footer-copy">&copy; 2026 El Asadero Taquería. Todos los derechos reservados. San Juan Teotihuacán, Edo. Méx.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FOR INTERACTION -->
+    <script>
+        function copyCLABE() {
+            const clabe = document.getElementById("clabe-text").innerText;
+            const icon = document.getElementById("copy-icon");
+            
+            // Clipboard copy fallbacks
+            const input = document.createElement('input');
+            input.value = clabe;
+            document.body.appendChild(input);
+            input.select();
+            document.execCommand('copy');
+            document.body.removeChild(input);
+
+            // Icon UI feedback
+            icon.className = "fa-solid fa-check";
+            icon.style.color = "#25d366";
+            
+            setTimeout(() => {
+                icon.className = "fa-regular fa-copy";
+                icon.style.color = "";
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
